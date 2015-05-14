@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home automation</title>
+	</head>
+
+	<meta name="viewport" content="width=1520, maximum-scale=1.0" />
+
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/lcd.css" />
+	<link rel="stylesheet" href="css/navbar.css" />
+	<link rel="stylesheet" href="css/bulb.css" />
+	<link rel="stylesheet" href="css/meter.css" />
+	<link rel="stylesheet" href="css/jquery.jqplot.min.css" />
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/socket.js"></script>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.jqplot.min.js"></script>
+	<script src="js/jqplot.dateAxisRenderer.min.js"></script>
+	<script src="js/jqplot.cursor.min.js"></script>
+	<script src="js/jqplot.highlighter.min.js"></script>
+	<script src="js/meter.js"></script>
+	<script src="js/bill.js"></script>
+
+	<body>
+		<div id="cssmenu" style="position: absolute; top: 0px; left: 325px; z-index: 1;">
+			<ul>
+			   <li><a id="tile" href="/main">Home</a></li>
+			   <li class="active"><a id="tile" href="/bill">Bill</a></li>
+			   <li><a id="tile" href="/scheduling">Scheduling</a></li>
+			   <li><a id="tile" href="/water">Water tank</a></li>
+			   <li><a id="tile" href="/logout">Log out</a></li>
+			</ul>
+		</div>
+
+	    <div id="graph" style="position: absolute; top: 120px; left: 20px; width:1150px; height:600px;"></div>
+	    <button style="position: absolute; top: 120px; left: 20px;" value="reset" type="button" onclick="chart.resetZoom();">Reset Zoom</button>
+
+	    <div id="stats" style="position: absolute; top: 120px; left: 100px;">Usage statistics</div>
+
+		<div class="meter">
+			<div class="timer" style="top: 100px; left: 1220px; position: absolute;">
+				<p>Voltage</p>
+				<div class="cell">
+					<div class="numbers" id="voltage">0 V</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="meter">
+			<div class="timer" style="top: 270px; left: 1220px; position: absolute;">
+				<p>Current</p>
+				<div class="cell">
+					<div class="numbers" id="current">0 A</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="meter">
+			<div class="timer" style="top: 440px; left: 1220px; position: absolute;">
+				<p>Power</p>
+				<div class="cell">
+					<div class="numbers" id="power">0 W</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="meter">
+			<div class="timer" style="top: 610px; left: 1220px; position: absolute;">
+				<p>Units</p>
+				<div class="cell">
+					<div class="numbers" id="energy">0 kWh</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

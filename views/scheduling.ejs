@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home automation</title>
+	</head>
+
+	<meta name="viewport" content="width=1520, maximum-scale=1.0" />
+
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/navbar.css" />
+	<link rel="stylesheet" href="css/bulb.css" />
+	<link rel="stylesheet" href="css/meter.css" />
+	<link rel="stylesheet" href="css/hexaflip.css" />
+	<link rel="stylesheet" href="css/button.css" />
+	<link rel="stylesheet" href="css/lcd.css" />
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/socket.js"></script>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/bulb.js"></script>
+	<script src="js/hexaflip.js"></script>
+	<script src="js/timePicker.js"></script>
+	<script src="js/moment.js"></script>
+	<script src="js/lcd.js"></script>
+
+	<body>
+		<div id="cssmenu" style="position: absolute; top: 0px; left: 325px; z-index: 1;">
+			<ul>
+			   <li><a id="tile" href="/main">Home</a></li>
+			   <li><a id="tile" href="/bill">Bill</a></li>
+			   <li class="active"><a id="tile" href="/scheduling">Scheduling</a></li>
+			   <li><a id="tile" href="/water">Water tank</a></li>
+			   <li><a id="tile" href="/logout">Log out</a></li>
+			</ul>
+		</div>
+
+		<div id="clock" class="light" style="top: -140px; left: 500px; position: absolute;">
+			<div class="display">
+				<div class="weekdays"></div>
+				<div class="ampm"></div>
+				<div class="alarm"></div>
+				<div class="digits"></div>
+			</div>
+		</div>
+
+		<button style="z-index: 1; position: absolute; top: 180px; left: 50px; width: 200px; font-size: 25px; background-color: black; color: white;" id="startHourUp">↑</button>
+		<button style="z-index: 1; position: absolute; top: 180px; left: 270px; width: 200px; font-size: 25px; background-color: black; color: white;" id="startMinuteUp">↑</button>
+		<div style="position: absolute; top: 150px; left: 50px;">
+			<h1 style="font-size: 50px; color: transparent;">Start time</h1>
+	        <div id="startTime" class="demo"></div>
+        </div>
+        <button style="z-index: 1; position: absolute; top: 420px; left: 50px; width: 200px; font-size: 25px; background-color: black; color: white;" id="startHourDown">↓</button>
+        <button style="z-index: 1; position: absolute; top: 420px; left: 270px; width: 200px; font-size: 25px; background-color: black; color: white;" id="startMinuteDown">↓</button>
+        <button style="z-index: 1; position: absolute; top: 460px; left: 50px; width: 200px; font-size: 25px; background-color: black; color: white;" id="stopHourUp">↑</button>
+        <button style="z-index: 1; position: absolute; top: 460px; left: 270px; width: 200px; font-size: 25px; background-color: black; color: white;" id="stopMinuteUp">↑</button>
+
+        <div class="round-button" style="width: 200px; height: 200px; position: absolute; top: 240px; left: 800px;"><div class="round-button-circle"><a href="#" id="startButton" class="round-button">SET</a></div></div>
+
+        <div style="position: absolute; top: 430px; left: 50px;">
+			<h1 style="font-size: 50px; color: transparent;">Stop time</h1>
+	        <div id="stopTime" class="demo"></div>
+        </div>
+        <button style="z-index: 1; position: absolute; top: 700px; left: 50px; width: 200px; font-size: 25px; background-color: black; color: white;" id="stopHourDown">↓</button>
+        <button style="z-index: 1; position: absolute; top: 700px; left: 270px; width: 200px; font-size: 25px; background-color: black; color: white;" id="stopMinuteDown">↓</button>
+
+        <div class="round-button" style="width: 200px; height: 200px; position: absolute; top: 500px; left: 800px;"><div class="round-button-circle"><a href="#" id="stopButton" class="round-button">SET</a></div></div>
+
+        <div id="bulbContainer" class="container" style="position: absolute; top: 200px; left: 1100px;">
+			<div class="bulb-light">
+			  
+			  <div id="light"></div>
+			  
+			  <div id="bulb">
+			    <div class="bulb-top">
+			      <div class="reflection"></div>
+			    </div>
+			    <div class="bulb-middle-1"></div>
+			    <div class="bulb-middle-2"></div>
+			    <div class="bulb-middle-3"></div>
+			    <div class="bulb-bottom"></div>
+			  </div>
+			    
+			  <div id="base">
+			    <div class="screw-top"></div>
+			    <div class="screw-a"></div>
+			    <div class="screw-b"></div>
+			    <div class="screw-a"></div>
+			    <div class="screw-b"></div>
+			    <div class="screw-a"></div>
+			    <div class="screw-b"></div>
+			    <div class="screw-c"></div>
+			    <div class="screw-d"></div>
+			  </div>
+			</div>
+		</div>
+	</body>
+</html>

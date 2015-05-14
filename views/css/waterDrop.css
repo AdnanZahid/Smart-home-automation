@@ -1,0 +1,29 @@
+#waterDropBox
+{
+    position:absolute;
+}
+
+#waterPump
+{
+    position:absolute;
+    background-image:url('../images/pump.png');
+    background-repeat:no-repeat;
+    top: -30px;
+    left: 35px;
+    width:106px;
+    height:80px;
+    display:inline-block;
+}
+
+#waterDrop
+{
+    position:absolute;
+    background-repeat:no-repeat;
+    width:85px;
+    height:87px;
+    display:inline-block;
+    top:22px;
+    left: 15px;
+    margin-top:10px;
+    margin-left:106px;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home automation</title>
+	</head>
+
+	<meta name="viewport" content="width=1520, maximum-scale=1.0" />
+
+	<link rel="stylesheet" href="css/jquery.nouislider.min.css" />
+	<link rel="stylesheet" href="css/jquery.nouislider.pips.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/knobStyle.css" />
+    <link rel="stylesheet" href="css/knobKnob.css" />
+	<link rel="stylesheet" href="css/slider.css" />
+	<link rel="stylesheet" href="css/bulb.css" />
+	<link rel="stylesheet" href="css/fan-round.css" />
+	<link rel="stylesheet" href="css/lcd.css" />
+	<link rel="stylesheet" href="css/meter.css" />
+	<link rel="stylesheet" href="css/water.css" />
+	<link rel="stylesheet" href="css/thermometer.css" />
+	<link rel="stylesheet" href="css/waterDrop.css" />
+	<link rel="stylesheet" href="css/smoke.css" />
+	<link rel="stylesheet" href="css/dialog.css" />
+	<link rel="stylesheet" href="css/navbar.css" />
+	<link rel="stylesheet" href="css/motion.css" />
+
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-migrate-1.2.1.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/jquery.nouislider.all.min.js"></script>
+	<script src="js/moment.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/socket.js"></script>
+
+	<script src="js/firebase.js"></script>
+	<script src="js/RTCPeerConnection-v1.6.js"></script>
+	<script src="js/broadcast.js"></script>
+	<script src="js/DetectRTC.js"></script>
+
+	<script src="js/transform.js"></script>
+	<script src="js/knobKnob.jquery.js"></script>
+	<script src="js/knobScript.js"></script>
+	<script src="js/slider.js"></script>
+	<script src="js/bulb.js"></script>
+	<script src="js/lcd.js"></script>
+	<script src="js/water.js"></script>
+	<script src="js/waterLimiter.js"></script>
+	<script src="js/waterDrop.js"></script>
+	<script src="js/temperature.js"></script>
+	<script src="js/meter.js"></script>
+	<script src="js/fan.js"></script>
+	<script src="js/navbar.js"></script>
+	<script src="js/motion.js"></script>
+
+	<body class="height:100%; overflow:hidden;">
+
+		<div id="cssmenu" style="position: absolute; top: 0px; left: 325px; z-index: 1;">
+			<ul>
+			   <li><a id="tile" href="/main">Home</a></li>
+			   <li><a id="tile" href="/bill">Bill</a></li>
+			   <li><a id="tile" href="/scheduling">Scheduling</a></li>
+			   <li class="active"><a id="tile" href="/water">Water tank</a></li>
+			   <li><a id="tile" href="/logout">Log out</a></li>
+			</ul>
+		</div>
+
+		<div id="clock" class="light" style="top: -140px; left: 500px; position: absolute;">
+			<div class="display">
+				<div class="weekdays"></div>
+				<div class="ampm"></div>
+				<div class="alarm"></div>
+				<div class="digits"></div>
+			</div>
+		</div>
+
+		<section class="experiment" style="width: 410px; top: 260px; left: 200px; position: absolute;">                
+		    <section>
+		        <select id="broadcasting-option" style="display: none;">
+		            <option>Audio + Video</option>
+		        </select>
+		        <button id="setup-new-broadcast" class="setup">Go</button>
+		    </section>
+		    
+		    <table style="width: 100%;" id="rooms-list"></table>
+		    
+		    <div id="videos-container" style="top: 50px; left: -120px; position: absolute; width: 555px;"></div>
+		</section>
+
+		<div class="fishtank_wrap" style="width: 410px; top: 270px; left: 800px; position: absolute;">
+			<div class="fishtank">
+			
+				<div class="bubble_wrap">
+					<div class="bubbles b0"></div>
+					<div class="bubbles b1"></div>
+					<div class="bubbles b2"></div>
+					<div class="bubbles b3"></div>
+					<div class="bubbles b4"></div>
+					<div class="bubbles b5"></div>
+				</div>
+				<div class="bubble_wrap bw2">
+					<div class="bubbles b6"></div>
+					<div class="bubbles b7"></div>
+					<div class="bubbles b8"></div>
+				</div>
+				<div class="water"></div>
+				
+				<div class="ground"></div>
+				
+				<div class="water"></div>
+				
+			</div>
+		</div>
+
+		<a href="#" id="waterDropBox" style="top: 270px; left: 757px; position: absolute;">
+		    <span id="waterPump"></span>
+		    <span id="waterDrop"></span>
+		</a>
+
+		<div id="waterLimiter" style="top: 320px; left: 1232px !important; position: absolute; height: 400px; z-index: 160;">
+			<span id="lowerLimit" style="display: none;"></span>
+			<span id="upperLimit" style="display: none;"></span>
+		</div>
+
+		<!--
+		<div id="player">
+			<div id="volume"></div>
+		</div>
+		-->
+
+	</body>
+	
+	<script src="js/camera.js"></script>
+</html>
